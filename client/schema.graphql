@@ -1,0 +1,1642 @@
+type About {
+  bgImage: UploadFileEntityResponse!
+  createdAt: DateTime
+  description: String
+  images(filters: UploadFileFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UploadFileRelationResponseCollection!
+  locale: String
+  localizations: AboutRelationResponseCollection
+  seo: ComponentSharedSeo
+  title: String!
+  updatedAt: DateTime
+}
+
+type AboutEntity {
+  attributes: About
+  id: ID
+}
+
+type AboutEntityResponse {
+  data: AboutEntity
+}
+
+input AboutInput {
+  bgImage: ID
+  description: String
+  images: [ID]
+  seo: ComponentSharedSeoInput
+  title: String
+}
+
+type AboutRelationResponseCollection {
+  data: [AboutEntity!]!
+}
+
+type AdvicesPage {
+  bgImage: UploadFileEntityResponse!
+  createdAt: DateTime
+  description: String!
+  locale: String
+  localizations: AdvicesPageRelationResponseCollection
+  seo: ComponentSharedSeo
+  updatedAt: DateTime
+}
+
+type AdvicesPageEntity {
+  attributes: AdvicesPage
+  id: ID
+}
+
+type AdvicesPageEntityResponse {
+  data: AdvicesPageEntity
+}
+
+input AdvicesPageInput {
+  bgImage: ID
+  description: String
+  seo: ComponentSharedSeoInput
+}
+
+type AdvicesPageRelationResponseCollection {
+  data: [AdvicesPageEntity!]!
+}
+
+type Blog {
+  article: String
+  blog_category: BlogCategoryEntityResponse
+  blog_tags(filters: BlogTagFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): BlogTagRelationResponseCollection
+  createdAt: DateTime
+  image: UploadFileEntityResponse!
+  locale: String
+  localizations(filters: BlogFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): BlogRelationResponseCollection
+  summary: String!
+  title: String!
+  updatedAt: DateTime
+}
+
+type BlogCategory {
+  category: String!
+  createdAt: DateTime
+  locale: String
+  localizations(filters: BlogCategoryFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): BlogCategoryRelationResponseCollection
+  updatedAt: DateTime
+}
+
+type BlogCategoryEntity {
+  attributes: BlogCategory
+  id: ID
+}
+
+type BlogCategoryEntityResponse {
+  data: BlogCategoryEntity
+}
+
+type BlogCategoryEntityResponseCollection {
+  data: [BlogCategoryEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input BlogCategoryFiltersInput {
+  and: [BlogCategoryFiltersInput]
+  category: StringFilterInput
+  createdAt: DateTimeFilterInput
+  id: IDFilterInput
+  locale: StringFilterInput
+  localizations: BlogCategoryFiltersInput
+  not: BlogCategoryFiltersInput
+  or: [BlogCategoryFiltersInput]
+  updatedAt: DateTimeFilterInput
+}
+
+input BlogCategoryInput {
+  category: String
+}
+
+type BlogCategoryRelationResponseCollection {
+  data: [BlogCategoryEntity!]!
+}
+
+type BlogEntity {
+  attributes: Blog
+  id: ID
+}
+
+type BlogEntityResponse {
+  data: BlogEntity
+}
+
+type BlogEntityResponseCollection {
+  data: [BlogEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input BlogFiltersInput {
+  and: [BlogFiltersInput]
+  article: StringFilterInput
+  blog_category: BlogCategoryFiltersInput
+  blog_tags: BlogTagFiltersInput
+  createdAt: DateTimeFilterInput
+  id: IDFilterInput
+  locale: StringFilterInput
+  localizations: BlogFiltersInput
+  not: BlogFiltersInput
+  or: [BlogFiltersInput]
+  summary: StringFilterInput
+  title: StringFilterInput
+  updatedAt: DateTimeFilterInput
+}
+
+input BlogInput {
+  article: String
+  blog_category: ID
+  blog_tags: [ID]
+  image: ID
+  summary: String
+  title: String
+}
+
+type BlogRelationResponseCollection {
+  data: [BlogEntity!]!
+}
+
+type BlogTag {
+  createdAt: DateTime
+  locale: String
+  localizations(filters: BlogTagFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): BlogTagRelationResponseCollection
+  tag: String!
+  updatedAt: DateTime
+}
+
+type BlogTagEntity {
+  attributes: BlogTag
+  id: ID
+}
+
+type BlogTagEntityResponse {
+  data: BlogTagEntity
+}
+
+type BlogTagEntityResponseCollection {
+  data: [BlogTagEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input BlogTagFiltersInput {
+  and: [BlogTagFiltersInput]
+  createdAt: DateTimeFilterInput
+  id: IDFilterInput
+  locale: StringFilterInput
+  localizations: BlogTagFiltersInput
+  not: BlogTagFiltersInput
+  or: [BlogTagFiltersInput]
+  tag: StringFilterInput
+  updatedAt: DateTimeFilterInput
+}
+
+input BlogTagInput {
+  tag: String
+}
+
+type BlogTagRelationResponseCollection {
+  data: [BlogTagEntity!]!
+}
+
+type BookingPage {
+  bg: UploadFileEntityResponse
+  createdAt: DateTime
+  embedCodeBooking: String
+  locale: String
+  localizations: BookingPageRelationResponseCollection
+  seo: ComponentSharedSeo
+  updatedAt: DateTime
+}
+
+type BookingPageEntity {
+  attributes: BookingPage
+  id: ID
+}
+
+type BookingPageEntityResponse {
+  data: BookingPageEntity
+}
+
+input BookingPageInput {
+  bg: ID
+  embedCodeBooking: String
+  seo: ComponentSharedSeoInput
+}
+
+type BookingPageRelationResponseCollection {
+  data: [BookingPageEntity!]!
+}
+
+input BooleanFilterInput {
+  and: [Boolean]
+  between: [Boolean]
+  contains: Boolean
+  containsi: Boolean
+  endsWith: Boolean
+  eq: Boolean
+  eqi: Boolean
+  gt: Boolean
+  gte: Boolean
+  in: [Boolean]
+  lt: Boolean
+  lte: Boolean
+  ne: Boolean
+  not: BooleanFilterInput
+  notContains: Boolean
+  notContainsi: Boolean
+  notIn: [Boolean]
+  notNull: Boolean
+  null: Boolean
+  or: [Boolean]
+  startsWith: Boolean
+}
+
+type Carrousel {
+  background: UploadFileEntityResponse
+  createdAt: DateTime
+  locale: String
+  localizations(filters: CarrouselFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): CarrouselRelationResponseCollection
+  subtitle: String
+  title: String!
+  updatedAt: DateTime
+}
+
+type CarrouselEntity {
+  attributes: Carrousel
+  id: ID
+}
+
+type CarrouselEntityResponse {
+  data: CarrouselEntity
+}
+
+type CarrouselEntityResponseCollection {
+  data: [CarrouselEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input CarrouselFiltersInput {
+  and: [CarrouselFiltersInput]
+  createdAt: DateTimeFilterInput
+  id: IDFilterInput
+  locale: StringFilterInput
+  localizations: CarrouselFiltersInput
+  not: CarrouselFiltersInput
+  or: [CarrouselFiltersInput]
+  subtitle: StringFilterInput
+  title: StringFilterInput
+  updatedAt: DateTimeFilterInput
+}
+
+input CarrouselInput {
+  background: ID
+  subtitle: String
+  title: String
+}
+
+type CarrouselRelationResponseCollection {
+  data: [CarrouselEntity!]!
+}
+
+type Common {
+  createdAt: DateTime
+  facebook: String
+  instagram: String
+  locale: String
+  localizations: CommonRelationResponseCollection
+  logo: UploadFileEntityResponse!
+  updatedAt: DateTime
+}
+
+type CommonEntity {
+  attributes: Common
+  id: ID
+}
+
+type CommonEntityResponse {
+  data: CommonEntity
+}
+
+input CommonInput {
+  facebook: String
+  instagram: String
+  logo: ID
+}
+
+type CommonRelationResponseCollection {
+  data: [CommonEntity!]!
+}
+
+type ComponentImageBgImage {
+  BgImage: UploadFileEntityResponse!
+  id: ID!
+}
+
+type ComponentSharedMetaSocial {
+  description: String!
+  id: ID!
+  image: UploadFileEntityResponse
+  title: String!
+}
+
+type ComponentSharedSeo {
+  id: ID!
+  keywords: String
+  metaDescription: String!
+  metaTitle: String!
+}
+
+input ComponentSharedSeoInput {
+  id: ID
+  keywords: String
+  metaDescription: String
+  metaTitle: String
+}
+
+type Contact {
+  Address: String!
+  bgimage: UploadFileEntityResponse!
+  createdAt: DateTime
+  email: String!
+  locale: String
+  localizations: ContactRelationResponseCollection
+  map: String!
+  name: String!
+  phone: String!
+  seo: ComponentSharedSeo
+  updatedAt: DateTime
+}
+
+type ContactEntity {
+  attributes: Contact
+  id: ID
+}
+
+type ContactEntityResponse {
+  data: ContactEntity
+}
+
+input ContactInput {
+  Address: String
+  bgimage: ID
+  email: String
+  map: String
+  name: String
+  phone: String
+  seo: ComponentSharedSeoInput
+}
+
+type ContactRelationResponseCollection {
+  data: [ContactEntity!]!
+}
+
+type ContactRequest {
+  createdAt: DateTime
+  done: Boolean
+  email: String!
+  locale: String
+  message: String!
+  name: String!
+  phone: String!
+  updatedAt: DateTime
+}
+
+type ContactRequestEntity {
+  attributes: ContactRequest
+  id: ID
+}
+
+type ContactRequestEntityResponse {
+  data: ContactRequestEntity
+}
+
+type ContactRequestEntityResponseCollection {
+  data: [ContactRequestEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input ContactRequestFiltersInput {
+  and: [ContactRequestFiltersInput]
+  createdAt: DateTimeFilterInput
+  done: BooleanFilterInput
+  email: StringFilterInput
+  id: IDFilterInput
+  locale: StringFilterInput
+  message: StringFilterInput
+  name: StringFilterInput
+  not: ContactRequestFiltersInput
+  or: [ContactRequestFiltersInput]
+  phone: StringFilterInput
+  updatedAt: DateTimeFilterInput
+}
+
+input ContactRequestInput {
+  done: Boolean
+  email: String
+  locale: String
+  message: String
+  name: String
+  phone: String
+}
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar DateTime
+
+input DateTimeFilterInput {
+  and: [DateTime]
+  between: [DateTime]
+  contains: DateTime
+  containsi: DateTime
+  endsWith: DateTime
+  eq: DateTime
+  eqi: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  ne: DateTime
+  not: DateTimeFilterInput
+  notContains: DateTime
+  notContainsi: DateTime
+  notIn: [DateTime]
+  notNull: Boolean
+  null: Boolean
+  or: [DateTime]
+  startsWith: DateTime
+}
+
+type EmailDesignerEmailTemplate {
+  bodyHtml: String
+  bodyText: String
+  createdAt: DateTime
+  design: JSON
+  enabled: Boolean
+  name: String
+  subject: String
+  tags: JSON
+  templateReferenceId: Int
+  updatedAt: DateTime
+}
+
+type EmailDesignerEmailTemplateEntity {
+  attributes: EmailDesignerEmailTemplate
+  id: ID
+}
+
+type EmailDesignerEmailTemplateEntityResponse {
+  data: EmailDesignerEmailTemplateEntity
+}
+
+type EmailDesignerEmailTemplateEntityResponseCollection {
+  data: [EmailDesignerEmailTemplateEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input EmailDesignerEmailTemplateFiltersInput {
+  and: [EmailDesignerEmailTemplateFiltersInput]
+  bodyHtml: StringFilterInput
+  bodyText: StringFilterInput
+  createdAt: DateTimeFilterInput
+  design: JSONFilterInput
+  enabled: BooleanFilterInput
+  id: IDFilterInput
+  name: StringFilterInput
+  not: EmailDesignerEmailTemplateFiltersInput
+  or: [EmailDesignerEmailTemplateFiltersInput]
+  subject: StringFilterInput
+  tags: JSONFilterInput
+  templateReferenceId: IntFilterInput
+  updatedAt: DateTimeFilterInput
+}
+
+input EmailDesignerEmailTemplateInput {
+  bodyHtml: String
+  bodyText: String
+  design: JSON
+  enabled: Boolean
+  name: String
+  subject: String
+  tags: JSON
+  templateReferenceId: Int
+}
+
+input FileInfoInput {
+  alternativeText: String
+  caption: String
+  name: String
+}
+
+input FloatFilterInput {
+  and: [Float]
+  between: [Float]
+  contains: Float
+  containsi: Float
+  endsWith: Float
+  eq: Float
+  eqi: Float
+  gt: Float
+  gte: Float
+  in: [Float]
+  lt: Float
+  lte: Float
+  ne: Float
+  not: FloatFilterInput
+  notContains: Float
+  notContainsi: Float
+  notIn: [Float]
+  notNull: Boolean
+  null: Boolean
+  or: [Float]
+  startsWith: Float
+}
+
+type Gallery {
+  bgimage: UploadFileEntityResponse!
+  createdAt: DateTime
+  locale: String
+  localizations: GalleryRelationResponseCollection
+  seo: ComponentSharedSeo
+  updatedAt: DateTime
+  villa_pictures(filters: VillaPictureFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): VillaPictureRelationResponseCollection
+}
+
+type GalleryEntity {
+  attributes: Gallery
+  id: ID
+}
+
+type GalleryEntityResponse {
+  data: GalleryEntity
+}
+
+input GalleryInput {
+  bgimage: ID
+  seo: ComponentSharedSeoInput
+  villa_pictures: [ID]
+}
+
+type GalleryRelationResponseCollection {
+  data: [GalleryEntity!]!
+}
+
+union GenericMorph = About | AdvicesPage | Blog | BlogCategory | BlogTag | BookingPage | Carrousel | Common | ComponentImageBgImage | ComponentSharedMetaSocial | ComponentSharedSeo | Contact | ContactRequest | EmailDesignerEmailTemplate | Gallery | GuestArticle | I18NLocale | Landing | LanguageText | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | VacationFacility | Villa | VillaFacility | VillaFacilityType | VillaPage | VillaPicture | VillasPage
+
+type GuestArticle {
+  comment: String
+  createdAt: DateTime
+  email: String
+  name: String
+  updatedAt: DateTime
+}
+
+type GuestArticleEntity {
+  attributes: GuestArticle
+  id: ID
+}
+
+type GuestArticleEntityResponse {
+  data: GuestArticleEntity
+}
+
+type GuestArticleEntityResponseCollection {
+  data: [GuestArticleEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input GuestArticleFiltersInput {
+  and: [GuestArticleFiltersInput]
+  comment: StringFilterInput
+  createdAt: DateTimeFilterInput
+  email: StringFilterInput
+  id: IDFilterInput
+  name: StringFilterInput
+  not: GuestArticleFiltersInput
+  or: [GuestArticleFiltersInput]
+  updatedAt: DateTimeFilterInput
+}
+
+input GuestArticleInput {
+  comment: String
+  email: String
+  name: String
+}
+
+type I18NLocale {
+  code: String
+  createdAt: DateTime
+  name: String
+  updatedAt: DateTime
+}
+
+"""A string used to identify an i18n locale"""
+scalar I18NLocaleCode
+
+type I18NLocaleEntity {
+  attributes: I18NLocale
+  id: ID
+}
+
+type I18NLocaleEntityResponse {
+  data: I18NLocaleEntity
+}
+
+type I18NLocaleEntityResponseCollection {
+  data: [I18NLocaleEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input I18NLocaleFiltersInput {
+  and: [I18NLocaleFiltersInput]
+  code: StringFilterInput
+  createdAt: DateTimeFilterInput
+  id: IDFilterInput
+  name: StringFilterInput
+  not: I18NLocaleFiltersInput
+  or: [I18NLocaleFiltersInput]
+  updatedAt: DateTimeFilterInput
+}
+
+input IDFilterInput {
+  and: [ID]
+  between: [ID]
+  contains: ID
+  containsi: ID
+  endsWith: ID
+  eq: ID
+  eqi: ID
+  gt: ID
+  gte: ID
+  in: [ID]
+  lt: ID
+  lte: ID
+  ne: ID
+  not: IDFilterInput
+  notContains: ID
+  notContainsi: ID
+  notIn: [ID]
+  notNull: Boolean
+  null: Boolean
+  or: [ID]
+  startsWith: ID
+}
+
+input IntFilterInput {
+  and: [Int]
+  between: [Int]
+  contains: Int
+  containsi: Int
+  endsWith: Int
+  eq: Int
+  eqi: Int
+  gt: Int
+  gte: Int
+  in: [Int]
+  lt: Int
+  lte: Int
+  ne: Int
+  not: IntFilterInput
+  notContains: Int
+  notContainsi: Int
+  notIn: [Int]
+  notNull: Boolean
+  null: Boolean
+  or: [Int]
+  startsWith: Int
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+input JSONFilterInput {
+  and: [JSON]
+  between: [JSON]
+  contains: JSON
+  containsi: JSON
+  endsWith: JSON
+  eq: JSON
+  eqi: JSON
+  gt: JSON
+  gte: JSON
+  in: [JSON]
+  lt: JSON
+  lte: JSON
+  ne: JSON
+  not: JSONFilterInput
+  notContains: JSON
+  notContainsi: JSON
+  notIn: [JSON]
+  notNull: Boolean
+  null: Boolean
+  or: [JSON]
+  startsWith: JSON
+}
+
+type Landing {
+  carrousels(filters: CarrouselFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): CarrouselRelationResponseCollection
+  createdAt: DateTime
+  locale: String
+  localizations: LandingRelationResponseCollection
+  seo: ComponentSharedSeo
+  updatedAt: DateTime
+}
+
+type LandingEntity {
+  attributes: Landing
+  id: ID
+}
+
+type LandingEntityResponse {
+  data: LandingEntity
+}
+
+input LandingInput {
+  carrousels: [ID]
+  seo: ComponentSharedSeoInput
+}
+
+type LandingRelationResponseCollection {
+  data: [LandingEntity!]!
+}
+
+type LanguageText {
+  createdAt: DateTime
+  key: String
+  locale: String
+  localizations(filters: LanguageTextFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): LanguageTextRelationResponseCollection
+  updatedAt: DateTime
+  value: String
+}
+
+type LanguageTextEntity {
+  attributes: LanguageText
+  id: ID
+}
+
+type LanguageTextEntityResponse {
+  data: LanguageTextEntity
+}
+
+type LanguageTextEntityResponseCollection {
+  data: [LanguageTextEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input LanguageTextFiltersInput {
+  and: [LanguageTextFiltersInput]
+  createdAt: DateTimeFilterInput
+  id: IDFilterInput
+  key: StringFilterInput
+  locale: StringFilterInput
+  localizations: LanguageTextFiltersInput
+  not: LanguageTextFiltersInput
+  or: [LanguageTextFiltersInput]
+  updatedAt: DateTimeFilterInput
+  value: StringFilterInput
+}
+
+input LanguageTextInput {
+  key: String
+  value: String
+}
+
+type LanguageTextRelationResponseCollection {
+  data: [LanguageTextEntity!]!
+}
+
+type Mutation {
+  """Change user password. Confirm with the current password."""
+  changePassword(currentPassword: String!, password: String!, passwordConfirmation: String!): UsersPermissionsLoginPayload
+  createAboutLocalization(data: AboutInput, id: ID, locale: I18NLocaleCode): AboutEntityResponse
+  createAdvicesPageLocalization(data: AdvicesPageInput, id: ID, locale: I18NLocaleCode): AdvicesPageEntityResponse
+  createBlog(data: BlogInput!, locale: I18NLocaleCode): BlogEntityResponse
+  createBlogCategory(data: BlogCategoryInput!, locale: I18NLocaleCode): BlogCategoryEntityResponse
+  createBlogCategoryLocalization(data: BlogCategoryInput, id: ID, locale: I18NLocaleCode): BlogCategoryEntityResponse
+  createBlogLocalization(data: BlogInput, id: ID, locale: I18NLocaleCode): BlogEntityResponse
+  createBlogTag(data: BlogTagInput!, locale: I18NLocaleCode): BlogTagEntityResponse
+  createBlogTagLocalization(data: BlogTagInput, id: ID, locale: I18NLocaleCode): BlogTagEntityResponse
+  createBookingPageLocalization(data: BookingPageInput, id: ID, locale: I18NLocaleCode): BookingPageEntityResponse
+  createCarrousel(data: CarrouselInput!, locale: I18NLocaleCode): CarrouselEntityResponse
+  createCarrouselLocalization(data: CarrouselInput, id: ID, locale: I18NLocaleCode): CarrouselEntityResponse
+  createCommonLocalization(data: CommonInput, id: ID, locale: I18NLocaleCode): CommonEntityResponse
+  createContactLocalization(data: ContactInput, id: ID, locale: I18NLocaleCode): ContactEntityResponse
+  createContactRequest(data: ContactRequestInput!): ContactRequestEntityResponse
+  createEmailDesignerEmailTemplate(data: EmailDesignerEmailTemplateInput!): EmailDesignerEmailTemplateEntityResponse
+  createGalleryLocalization(data: GalleryInput, id: ID, locale: I18NLocaleCode): GalleryEntityResponse
+  createGuestArticle(data: GuestArticleInput!): GuestArticleEntityResponse
+  createLandingLocalization(data: LandingInput, id: ID, locale: I18NLocaleCode): LandingEntityResponse
+  createLanguageText(data: LanguageTextInput!, locale: I18NLocaleCode): LanguageTextEntityResponse
+  createLanguageTextLocalization(data: LanguageTextInput, id: ID, locale: I18NLocaleCode): LanguageTextEntityResponse
+  createUploadFile(data: UploadFileInput!): UploadFileEntityResponse
+  createUploadFolder(data: UploadFolderInput!): UploadFolderEntityResponse
+
+  """Create a new role"""
+  createUsersPermissionsRole(data: UsersPermissionsRoleInput!): UsersPermissionsCreateRolePayload
+
+  """Create a new user"""
+  createUsersPermissionsUser(data: UsersPermissionsUserInput!): UsersPermissionsUserEntityResponse!
+  createVacationFacility(data: VacationFacilityInput!, locale: I18NLocaleCode): VacationFacilityEntityResponse
+  createVacationFacilityLocalization(data: VacationFacilityInput, id: ID, locale: I18NLocaleCode): VacationFacilityEntityResponse
+  createVilla(data: VillaInput!, locale: I18NLocaleCode): VillaEntityResponse
+  createVillaFacility(data: VillaFacilityInput!, locale: I18NLocaleCode): VillaFacilityEntityResponse
+  createVillaFacilityLocalization(data: VillaFacilityInput, id: ID, locale: I18NLocaleCode): VillaFacilityEntityResponse
+  createVillaFacilityType(data: VillaFacilityTypeInput!, locale: I18NLocaleCode): VillaFacilityTypeEntityResponse
+  createVillaFacilityTypeLocalization(data: VillaFacilityTypeInput, id: ID, locale: I18NLocaleCode): VillaFacilityTypeEntityResponse
+  createVillaLocalization(data: VillaInput, id: ID, locale: I18NLocaleCode): VillaEntityResponse
+  createVillaPageLocalization(data: VillaPageInput, id: ID, locale: I18NLocaleCode): VillaPageEntityResponse
+  createVillaPicture(data: VillaPictureInput!, locale: I18NLocaleCode): VillaPictureEntityResponse
+  createVillaPictureLocalization(data: VillaPictureInput, id: ID, locale: I18NLocaleCode): VillaPictureEntityResponse
+  createVillasPageLocalization(data: VillasPageInput, id: ID, locale: I18NLocaleCode): VillasPageEntityResponse
+  deleteAbout(locale: I18NLocaleCode): AboutEntityResponse
+  deleteAdvicesPage(locale: I18NLocaleCode): AdvicesPageEntityResponse
+  deleteBlog(id: ID!, locale: I18NLocaleCode): BlogEntityResponse
+  deleteBlogCategory(id: ID!, locale: I18NLocaleCode): BlogCategoryEntityResponse
+  deleteBlogTag(id: ID!, locale: I18NLocaleCode): BlogTagEntityResponse
+  deleteBookingPage(locale: I18NLocaleCode): BookingPageEntityResponse
+  deleteCarrousel(id: ID!, locale: I18NLocaleCode): CarrouselEntityResponse
+  deleteCommon(locale: I18NLocaleCode): CommonEntityResponse
+  deleteContact(locale: I18NLocaleCode): ContactEntityResponse
+  deleteContactRequest(id: ID!): ContactRequestEntityResponse
+  deleteEmailDesignerEmailTemplate(id: ID!): EmailDesignerEmailTemplateEntityResponse
+  deleteGallery(locale: I18NLocaleCode): GalleryEntityResponse
+  deleteGuestArticle(id: ID!): GuestArticleEntityResponse
+  deleteLanding(locale: I18NLocaleCode): LandingEntityResponse
+  deleteLanguageText(id: ID!, locale: I18NLocaleCode): LanguageTextEntityResponse
+  deleteUploadFile(id: ID!): UploadFileEntityResponse
+  deleteUploadFolder(id: ID!): UploadFolderEntityResponse
+
+  """Delete an existing role"""
+  deleteUsersPermissionsRole(id: ID!): UsersPermissionsDeleteRolePayload
+
+  """Delete an existing user"""
+  deleteUsersPermissionsUser(id: ID!): UsersPermissionsUserEntityResponse!
+  deleteVacationFacility(id: ID!, locale: I18NLocaleCode): VacationFacilityEntityResponse
+  deleteVilla(id: ID!, locale: I18NLocaleCode): VillaEntityResponse
+  deleteVillaFacility(id: ID!, locale: I18NLocaleCode): VillaFacilityEntityResponse
+  deleteVillaFacilityType(id: ID!, locale: I18NLocaleCode): VillaFacilityTypeEntityResponse
+  deleteVillaPage(locale: I18NLocaleCode): VillaPageEntityResponse
+  deleteVillaPicture(id: ID!, locale: I18NLocaleCode): VillaPictureEntityResponse
+  deleteVillasPage(locale: I18NLocaleCode): VillasPageEntityResponse
+
+  """Confirm an email users email address"""
+  emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
+
+  """Request a reset password token"""
+  forgotPassword(email: String!): UsersPermissionsPasswordPayload
+  login(input: UsersPermissionsLoginInput!): UsersPermissionsLoginPayload!
+  multipleUpload(field: String, files: [Upload]!, ref: String, refId: ID): [UploadFileEntityResponse]!
+
+  """Register a user"""
+  register(input: UsersPermissionsRegisterInput!): UsersPermissionsLoginPayload!
+  removeFile(id: ID!): UploadFileEntityResponse
+
+  """
+  Reset user password. Confirm with a code (resetToken from forgotPassword)
+  """
+  resetPassword(code: String!, password: String!, passwordConfirmation: String!): UsersPermissionsLoginPayload
+  updateAbout(data: AboutInput!, locale: I18NLocaleCode): AboutEntityResponse
+  updateAdvicesPage(data: AdvicesPageInput!, locale: I18NLocaleCode): AdvicesPageEntityResponse
+  updateBlog(data: BlogInput!, id: ID!, locale: I18NLocaleCode): BlogEntityResponse
+  updateBlogCategory(data: BlogCategoryInput!, id: ID!, locale: I18NLocaleCode): BlogCategoryEntityResponse
+  updateBlogTag(data: BlogTagInput!, id: ID!, locale: I18NLocaleCode): BlogTagEntityResponse
+  updateBookingPage(data: BookingPageInput!, locale: I18NLocaleCode): BookingPageEntityResponse
+  updateCarrousel(data: CarrouselInput!, id: ID!, locale: I18NLocaleCode): CarrouselEntityResponse
+  updateCommon(data: CommonInput!, locale: I18NLocaleCode): CommonEntityResponse
+  updateContact(data: ContactInput!, locale: I18NLocaleCode): ContactEntityResponse
+  updateContactRequest(data: ContactRequestInput!, id: ID!): ContactRequestEntityResponse
+  updateEmailDesignerEmailTemplate(data: EmailDesignerEmailTemplateInput!, id: ID!): EmailDesignerEmailTemplateEntityResponse
+  updateFileInfo(id: ID!, info: FileInfoInput): UploadFileEntityResponse!
+  updateGallery(data: GalleryInput!, locale: I18NLocaleCode): GalleryEntityResponse
+  updateGuestArticle(data: GuestArticleInput!, id: ID!): GuestArticleEntityResponse
+  updateLanding(data: LandingInput!, locale: I18NLocaleCode): LandingEntityResponse
+  updateLanguageText(data: LanguageTextInput!, id: ID!, locale: I18NLocaleCode): LanguageTextEntityResponse
+  updateUploadFile(data: UploadFileInput!, id: ID!): UploadFileEntityResponse
+  updateUploadFolder(data: UploadFolderInput!, id: ID!): UploadFolderEntityResponse
+
+  """Update an existing role"""
+  updateUsersPermissionsRole(data: UsersPermissionsRoleInput!, id: ID!): UsersPermissionsUpdateRolePayload
+
+  """Update an existing user"""
+  updateUsersPermissionsUser(data: UsersPermissionsUserInput!, id: ID!): UsersPermissionsUserEntityResponse!
+  updateVacationFacility(data: VacationFacilityInput!, id: ID!, locale: I18NLocaleCode): VacationFacilityEntityResponse
+  updateVilla(data: VillaInput!, id: ID!, locale: I18NLocaleCode): VillaEntityResponse
+  updateVillaFacility(data: VillaFacilityInput!, id: ID!, locale: I18NLocaleCode): VillaFacilityEntityResponse
+  updateVillaFacilityType(data: VillaFacilityTypeInput!, id: ID!, locale: I18NLocaleCode): VillaFacilityTypeEntityResponse
+  updateVillaPage(data: VillaPageInput!, locale: I18NLocaleCode): VillaPageEntityResponse
+  updateVillaPicture(data: VillaPictureInput!, id: ID!, locale: I18NLocaleCode): VillaPictureEntityResponse
+  updateVillasPage(data: VillasPageInput!, locale: I18NLocaleCode): VillasPageEntityResponse
+  upload(field: String, file: Upload!, info: FileInfoInput, ref: String, refId: ID): UploadFileEntityResponse!
+}
+
+type Pagination {
+  page: Int!
+  pageCount: Int!
+  pageSize: Int!
+  total: Int!
+}
+
+input PaginationArg {
+  limit: Int
+  page: Int
+  pageSize: Int
+  start: Int
+}
+
+type Query {
+  about(locale: I18NLocaleCode): AboutEntityResponse
+  advicesPage(locale: I18NLocaleCode): AdvicesPageEntityResponse
+  blog(id: ID, locale: I18NLocaleCode): BlogEntityResponse
+  blogCategories(filters: BlogCategoryFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, sort: [String] = []): BlogCategoryEntityResponseCollection
+  blogCategory(id: ID, locale: I18NLocaleCode): BlogCategoryEntityResponse
+  blogTag(id: ID, locale: I18NLocaleCode): BlogTagEntityResponse
+  blogTags(filters: BlogTagFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, sort: [String] = []): BlogTagEntityResponseCollection
+  blogs(filters: BlogFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, sort: [String] = []): BlogEntityResponseCollection
+  bookingPage(locale: I18NLocaleCode): BookingPageEntityResponse
+  carrousel(id: ID, locale: I18NLocaleCode): CarrouselEntityResponse
+  carrousels(filters: CarrouselFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, sort: [String] = []): CarrouselEntityResponseCollection
+  common(locale: I18NLocaleCode): CommonEntityResponse
+  contact(locale: I18NLocaleCode): ContactEntityResponse
+  contactRequest(id: ID): ContactRequestEntityResponse
+  contactRequests(filters: ContactRequestFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): ContactRequestEntityResponseCollection
+  emailDesignerEmailTemplate(id: ID): EmailDesignerEmailTemplateEntityResponse
+  emailDesignerEmailTemplates(filters: EmailDesignerEmailTemplateFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): EmailDesignerEmailTemplateEntityResponseCollection
+  gallery(locale: I18NLocaleCode): GalleryEntityResponse
+  guestArticle(id: ID): GuestArticleEntityResponse
+  guestArticles(filters: GuestArticleFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): GuestArticleEntityResponseCollection
+  i18NLocale(id: ID): I18NLocaleEntityResponse
+  i18NLocales(filters: I18NLocaleFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): I18NLocaleEntityResponseCollection
+  landing(locale: I18NLocaleCode): LandingEntityResponse
+  languageText(id: ID, locale: I18NLocaleCode): LanguageTextEntityResponse
+  languageTexts(filters: LanguageTextFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, sort: [String] = []): LanguageTextEntityResponseCollection
+  me: UsersPermissionsMe
+  uploadFile(id: ID): UploadFileEntityResponse
+  uploadFiles(filters: UploadFileFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UploadFileEntityResponseCollection
+  uploadFolder(id: ID): UploadFolderEntityResponse
+  uploadFolders(filters: UploadFolderFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UploadFolderEntityResponseCollection
+  usersPermissionsRole(id: ID): UsersPermissionsRoleEntityResponse
+  usersPermissionsRoles(filters: UsersPermissionsRoleFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UsersPermissionsRoleEntityResponseCollection
+  usersPermissionsUser(id: ID): UsersPermissionsUserEntityResponse
+  usersPermissionsUsers(filters: UsersPermissionsUserFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UsersPermissionsUserEntityResponseCollection
+  vacationFacilities(filters: VacationFacilityFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, sort: [String] = []): VacationFacilityEntityResponseCollection
+  vacationFacility(id: ID, locale: I18NLocaleCode): VacationFacilityEntityResponse
+  villa(id: ID, locale: I18NLocaleCode): VillaEntityResponse
+  villaFacilities(filters: VillaFacilityFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, sort: [String] = []): VillaFacilityEntityResponseCollection
+  villaFacility(id: ID, locale: I18NLocaleCode): VillaFacilityEntityResponse
+  villaFacilityType(id: ID, locale: I18NLocaleCode): VillaFacilityTypeEntityResponse
+  villaFacilityTypes(filters: VillaFacilityTypeFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, sort: [String] = []): VillaFacilityTypeEntityResponseCollection
+  villaPage(locale: I18NLocaleCode): VillaPageEntityResponse
+  villaPicture(id: ID, locale: I18NLocaleCode): VillaPictureEntityResponse
+  villaPictures(filters: VillaPictureFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, sort: [String] = []): VillaPictureEntityResponseCollection
+  villas(filters: VillaFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, sort: [String] = []): VillaEntityResponseCollection
+  villasPage(locale: I18NLocaleCode): VillasPageEntityResponse
+}
+
+type ResponseCollectionMeta {
+  pagination: Pagination!
+}
+
+input StringFilterInput {
+  and: [String]
+  between: [String]
+  contains: String
+  containsi: String
+  endsWith: String
+  eq: String
+  eqi: String
+  gt: String
+  gte: String
+  in: [String]
+  lt: String
+  lte: String
+  ne: String
+  not: StringFilterInput
+  notContains: String
+  notContainsi: String
+  notIn: [String]
+  notNull: Boolean
+  null: Boolean
+  or: [String]
+  startsWith: String
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type UploadFile {
+  alternativeText: String
+  caption: String
+  createdAt: DateTime
+  ext: String
+  formats: JSON
+  hash: String!
+  height: Int
+  mime: String!
+  name: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  related: [GenericMorph]
+  size: Float!
+  updatedAt: DateTime
+  url: String!
+  width: Int
+}
+
+type UploadFileEntity {
+  attributes: UploadFile
+  id: ID
+}
+
+type UploadFileEntityResponse {
+  data: UploadFileEntity
+}
+
+type UploadFileEntityResponseCollection {
+  data: [UploadFileEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input UploadFileFiltersInput {
+  alternativeText: StringFilterInput
+  and: [UploadFileFiltersInput]
+  caption: StringFilterInput
+  createdAt: DateTimeFilterInput
+  ext: StringFilterInput
+  folder: UploadFolderFiltersInput
+  folderPath: StringFilterInput
+  formats: JSONFilterInput
+  hash: StringFilterInput
+  height: IntFilterInput
+  id: IDFilterInput
+  mime: StringFilterInput
+  name: StringFilterInput
+  not: UploadFileFiltersInput
+  or: [UploadFileFiltersInput]
+  previewUrl: StringFilterInput
+  provider: StringFilterInput
+  provider_metadata: JSONFilterInput
+  size: FloatFilterInput
+  updatedAt: DateTimeFilterInput
+  url: StringFilterInput
+  width: IntFilterInput
+}
+
+input UploadFileInput {
+  alternativeText: String
+  caption: String
+  ext: String
+  folder: ID
+  folderPath: String
+  formats: JSON
+  hash: String
+  height: Int
+  mime: String
+  name: String
+  previewUrl: String
+  provider: String
+  provider_metadata: JSON
+  size: Float
+  url: String
+  width: Int
+}
+
+type UploadFileRelationResponseCollection {
+  data: [UploadFileEntity!]!
+}
+
+type UploadFolder {
+  children(filters: UploadFolderFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UploadFolderRelationResponseCollection
+  createdAt: DateTime
+  files(filters: UploadFileFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UploadFileRelationResponseCollection
+  name: String!
+  parent: UploadFolderEntityResponse
+  path: String!
+  pathId: Int!
+  updatedAt: DateTime
+}
+
+type UploadFolderEntity {
+  attributes: UploadFolder
+  id: ID
+}
+
+type UploadFolderEntityResponse {
+  data: UploadFolderEntity
+}
+
+type UploadFolderEntityResponseCollection {
+  data: [UploadFolderEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input UploadFolderFiltersInput {
+  and: [UploadFolderFiltersInput]
+  children: UploadFolderFiltersInput
+  createdAt: DateTimeFilterInput
+  files: UploadFileFiltersInput
+  id: IDFilterInput
+  name: StringFilterInput
+  not: UploadFolderFiltersInput
+  or: [UploadFolderFiltersInput]
+  parent: UploadFolderFiltersInput
+  path: StringFilterInput
+  pathId: IntFilterInput
+  updatedAt: DateTimeFilterInput
+}
+
+input UploadFolderInput {
+  children: [ID]
+  files: [ID]
+  name: String
+  parent: ID
+  path: String
+  pathId: Int
+}
+
+type UploadFolderRelationResponseCollection {
+  data: [UploadFolderEntity!]!
+}
+
+type UsersPermissionsCreateRolePayload {
+  ok: Boolean!
+}
+
+type UsersPermissionsDeleteRolePayload {
+  ok: Boolean!
+}
+
+input UsersPermissionsLoginInput {
+  identifier: String!
+  password: String!
+  provider: String! = "local"
+}
+
+type UsersPermissionsLoginPayload {
+  jwt: String
+  user: UsersPermissionsMe!
+}
+
+type UsersPermissionsMe {
+  blocked: Boolean
+  confirmed: Boolean
+  email: String
+  id: ID!
+  role: UsersPermissionsMeRole
+  username: String!
+}
+
+type UsersPermissionsMeRole {
+  description: String
+  id: ID!
+  name: String!
+  type: String
+}
+
+type UsersPermissionsPasswordPayload {
+  ok: Boolean!
+}
+
+type UsersPermissionsPermission {
+  action: String!
+  createdAt: DateTime
+  role: UsersPermissionsRoleEntityResponse
+  updatedAt: DateTime
+}
+
+type UsersPermissionsPermissionEntity {
+  attributes: UsersPermissionsPermission
+  id: ID
+}
+
+input UsersPermissionsPermissionFiltersInput {
+  action: StringFilterInput
+  and: [UsersPermissionsPermissionFiltersInput]
+  createdAt: DateTimeFilterInput
+  id: IDFilterInput
+  not: UsersPermissionsPermissionFiltersInput
+  or: [UsersPermissionsPermissionFiltersInput]
+  role: UsersPermissionsRoleFiltersInput
+  updatedAt: DateTimeFilterInput
+}
+
+type UsersPermissionsPermissionRelationResponseCollection {
+  data: [UsersPermissionsPermissionEntity!]!
+}
+
+input UsersPermissionsRegisterInput {
+  email: String!
+  password: String!
+  username: String!
+}
+
+type UsersPermissionsRole {
+  createdAt: DateTime
+  description: String
+  name: String!
+  permissions(filters: UsersPermissionsPermissionFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UsersPermissionsPermissionRelationResponseCollection
+  type: String
+  updatedAt: DateTime
+  users(filters: UsersPermissionsUserFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UsersPermissionsUserRelationResponseCollection
+}
+
+type UsersPermissionsRoleEntity {
+  attributes: UsersPermissionsRole
+  id: ID
+}
+
+type UsersPermissionsRoleEntityResponse {
+  data: UsersPermissionsRoleEntity
+}
+
+type UsersPermissionsRoleEntityResponseCollection {
+  data: [UsersPermissionsRoleEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input UsersPermissionsRoleFiltersInput {
+  and: [UsersPermissionsRoleFiltersInput]
+  createdAt: DateTimeFilterInput
+  description: StringFilterInput
+  id: IDFilterInput
+  name: StringFilterInput
+  not: UsersPermissionsRoleFiltersInput
+  or: [UsersPermissionsRoleFiltersInput]
+  permissions: UsersPermissionsPermissionFiltersInput
+  type: StringFilterInput
+  updatedAt: DateTimeFilterInput
+  users: UsersPermissionsUserFiltersInput
+}
+
+input UsersPermissionsRoleInput {
+  description: String
+  name: String
+  permissions: [ID]
+  type: String
+  users: [ID]
+}
+
+type UsersPermissionsUpdateRolePayload {
+  ok: Boolean!
+}
+
+type UsersPermissionsUser {
+  blocked: Boolean
+  confirmed: Boolean
+  createdAt: DateTime
+  email: String!
+  provider: String
+  role: UsersPermissionsRoleEntityResponse
+  updatedAt: DateTime
+  username: String!
+}
+
+type UsersPermissionsUserEntity {
+  attributes: UsersPermissionsUser
+  id: ID
+}
+
+type UsersPermissionsUserEntityResponse {
+  data: UsersPermissionsUserEntity
+}
+
+type UsersPermissionsUserEntityResponseCollection {
+  data: [UsersPermissionsUserEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input UsersPermissionsUserFiltersInput {
+  and: [UsersPermissionsUserFiltersInput]
+  blocked: BooleanFilterInput
+  confirmationToken: StringFilterInput
+  confirmed: BooleanFilterInput
+  createdAt: DateTimeFilterInput
+  email: StringFilterInput
+  id: IDFilterInput
+  not: UsersPermissionsUserFiltersInput
+  or: [UsersPermissionsUserFiltersInput]
+  password: StringFilterInput
+  provider: StringFilterInput
+  resetPasswordToken: StringFilterInput
+  role: UsersPermissionsRoleFiltersInput
+  updatedAt: DateTimeFilterInput
+  username: StringFilterInput
+}
+
+input UsersPermissionsUserInput {
+  blocked: Boolean
+  confirmationToken: String
+  confirmed: Boolean
+  email: String
+  password: String
+  provider: String
+  resetPasswordToken: String
+  role: ID
+  username: String
+}
+
+type UsersPermissionsUserRelationResponseCollection {
+  data: [UsersPermissionsUserEntity!]!
+}
+
+type VacationFacility {
+  createdAt: DateTime
+  description: String!
+  icon: UploadFileEntityResponse!
+  locale: String
+  localizations(filters: VacationFacilityFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): VacationFacilityRelationResponseCollection
+  title: String!
+  updatedAt: DateTime
+}
+
+type VacationFacilityEntity {
+  attributes: VacationFacility
+  id: ID
+}
+
+type VacationFacilityEntityResponse {
+  data: VacationFacilityEntity
+}
+
+type VacationFacilityEntityResponseCollection {
+  data: [VacationFacilityEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input VacationFacilityFiltersInput {
+  and: [VacationFacilityFiltersInput]
+  createdAt: DateTimeFilterInput
+  description: StringFilterInput
+  id: IDFilterInput
+  locale: StringFilterInput
+  localizations: VacationFacilityFiltersInput
+  not: VacationFacilityFiltersInput
+  or: [VacationFacilityFiltersInput]
+  title: StringFilterInput
+  updatedAt: DateTimeFilterInput
+}
+
+input VacationFacilityInput {
+  description: String
+  icon: ID
+  title: String
+}
+
+type VacationFacilityRelationResponseCollection {
+  data: [VacationFacilityEntity!]!
+}
+
+type Villa {
+  createdAt: DateTime
+  description: String
+  locale: String
+  localizations(filters: VillaFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): VillaRelationResponseCollection
+  minPrice: Int
+  name: String!
+  nbGuests: Int!
+  superficie: Int!
+  updatedAt: DateTime
+  villa_facilities(filters: VillaFacilityFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): VillaFacilityRelationResponseCollection
+  villa_pictures(filters: VillaPictureFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): VillaPictureRelationResponseCollection
+}
+
+type VillaEntity {
+  attributes: Villa
+  id: ID
+}
+
+type VillaEntityResponse {
+  data: VillaEntity
+}
+
+type VillaEntityResponseCollection {
+  data: [VillaEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+type VillaFacility {
+  createdAt: DateTime
+  locale: String
+  localizations(filters: VillaFacilityFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): VillaFacilityRelationResponseCollection
+  name: String
+  updatedAt: DateTime
+  villa_facility_type: VillaFacilityTypeEntityResponse
+}
+
+type VillaFacilityEntity {
+  attributes: VillaFacility
+  id: ID
+}
+
+type VillaFacilityEntityResponse {
+  data: VillaFacilityEntity
+}
+
+type VillaFacilityEntityResponseCollection {
+  data: [VillaFacilityEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input VillaFacilityFiltersInput {
+  and: [VillaFacilityFiltersInput]
+  createdAt: DateTimeFilterInput
+  id: IDFilterInput
+  locale: StringFilterInput
+  localizations: VillaFacilityFiltersInput
+  name: StringFilterInput
+  not: VillaFacilityFiltersInput
+  or: [VillaFacilityFiltersInput]
+  updatedAt: DateTimeFilterInput
+  villa_facility_type: VillaFacilityTypeFiltersInput
+}
+
+input VillaFacilityInput {
+  name: String
+  villa_facility_type: ID
+}
+
+type VillaFacilityRelationResponseCollection {
+  data: [VillaFacilityEntity!]!
+}
+
+type VillaFacilityType {
+  createdAt: DateTime
+  locale: String
+  localizations(filters: VillaFacilityTypeFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): VillaFacilityTypeRelationResponseCollection
+  title: String!
+  updatedAt: DateTime
+  villa_facilities(filters: VillaFacilityFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): VillaFacilityRelationResponseCollection
+}
+
+type VillaFacilityTypeEntity {
+  attributes: VillaFacilityType
+  id: ID
+}
+
+type VillaFacilityTypeEntityResponse {
+  data: VillaFacilityTypeEntity
+}
+
+type VillaFacilityTypeEntityResponseCollection {
+  data: [VillaFacilityTypeEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input VillaFacilityTypeFiltersInput {
+  and: [VillaFacilityTypeFiltersInput]
+  createdAt: DateTimeFilterInput
+  id: IDFilterInput
+  locale: StringFilterInput
+  localizations: VillaFacilityTypeFiltersInput
+  not: VillaFacilityTypeFiltersInput
+  or: [VillaFacilityTypeFiltersInput]
+  title: StringFilterInput
+  updatedAt: DateTimeFilterInput
+  villa_facilities: VillaFacilityFiltersInput
+}
+
+input VillaFacilityTypeInput {
+  title: String
+  villa_facilities: [ID]
+}
+
+type VillaFacilityTypeRelationResponseCollection {
+  data: [VillaFacilityTypeEntity!]!
+}
+
+input VillaFiltersInput {
+  and: [VillaFiltersInput]
+  createdAt: DateTimeFilterInput
+  description: StringFilterInput
+  id: IDFilterInput
+  locale: StringFilterInput
+  localizations: VillaFiltersInput
+  minPrice: IntFilterInput
+  name: StringFilterInput
+  nbGuests: IntFilterInput
+  not: VillaFiltersInput
+  or: [VillaFiltersInput]
+  superficie: IntFilterInput
+  updatedAt: DateTimeFilterInput
+  villa_facilities: VillaFacilityFiltersInput
+  villa_pictures: VillaPictureFiltersInput
+}
+
+input VillaInput {
+  description: String
+  minPrice: Int
+  name: String
+  nbGuests: Int
+  superficie: Int
+  villa_facilities: [ID]
+  villa_pictures: [ID]
+}
+
+type VillaPage {
+  bgImage: UploadFileEntityResponse!
+  createdAt: DateTime
+  locale: String
+  localizations: VillaPageRelationResponseCollection
+  seo: ComponentSharedSeo
+  updatedAt: DateTime
+}
+
+type VillaPageEntity {
+  attributes: VillaPage
+  id: ID
+}
+
+type VillaPageEntityResponse {
+  data: VillaPageEntity
+}
+
+input VillaPageInput {
+  bgImage: ID
+  seo: ComponentSharedSeoInput
+}
+
+type VillaPageRelationResponseCollection {
+  data: [VillaPageEntity!]!
+}
+
+type VillaPicture {
+  createdAt: DateTime
+  description: String!
+  image: UploadFileEntityResponse!
+  locale: String
+  localizations(filters: VillaPictureFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): VillaPictureRelationResponseCollection
+  updatedAt: DateTime
+}
+
+type VillaPictureEntity {
+  attributes: VillaPicture
+  id: ID
+}
+
+type VillaPictureEntityResponse {
+  data: VillaPictureEntity
+}
+
+type VillaPictureEntityResponseCollection {
+  data: [VillaPictureEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input VillaPictureFiltersInput {
+  and: [VillaPictureFiltersInput]
+  createdAt: DateTimeFilterInput
+  description: StringFilterInput
+  id: IDFilterInput
+  locale: StringFilterInput
+  localizations: VillaPictureFiltersInput
+  not: VillaPictureFiltersInput
+  or: [VillaPictureFiltersInput]
+  updatedAt: DateTimeFilterInput
+}
+
+input VillaPictureInput {
+  description: String
+  image: ID
+}
+
+type VillaPictureRelationResponseCollection {
+  data: [VillaPictureEntity!]!
+}
+
+type VillaRelationResponseCollection {
+  data: [VillaEntity!]!
+}
+
+type VillasPage {
+  bgImage: UploadFileEntityResponse!
+  createdAt: DateTime
+  description: String
+  locale: String
+  localizations: VillasPageRelationResponseCollection
+  seo: ComponentSharedSeo
+  updatedAt: DateTime
+}
+
+type VillasPageEntity {
+  attributes: VillasPage
+  id: ID
+}
+
+type VillasPageEntityResponse {
+  data: VillasPageEntity
+}
+
+input VillasPageInput {
+  bgImage: ID
+  description: String
+  seo: ComponentSharedSeoInput
+}
+
+type VillasPageRelationResponseCollection {
+  data: [VillasPageEntity!]!
+}
